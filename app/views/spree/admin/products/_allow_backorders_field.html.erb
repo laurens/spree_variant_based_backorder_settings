@@ -1,0 +1,8 @@
+<% if Spree::Config[:allow_backorders] %>
+  <%= f.field_container :allow_backorders do %>
+    <%= f.label :allow_backorders %><br />
+    <%= f.check_box :allow_backorders %> <%= f.label :allow_backorders, t(:allow_backorders), :class => 'sub' %><br />
+    <%= f.error_message_on :allow_backorders %>
+  <% end %>
+<% end %>
+todo unless has_variants

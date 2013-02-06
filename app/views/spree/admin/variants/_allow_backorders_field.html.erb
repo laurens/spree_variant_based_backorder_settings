@@ -1,0 +1,4 @@
+<% if Spree::Config[:allow_backorders] %>
+  <p data-hook="allow_backorders"><%= f.label :allow_backorders, t(:allow_backorders) %>: <br />
+  <%= f.check_box :allow_backorders %></p>
+<% end %>
