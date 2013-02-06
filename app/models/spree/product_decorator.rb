@@ -1,4 +1,6 @@
 Spree::Product.class_eval do
+  attr_accessible :allow_backorders
+
   def allow_backorders?
     has_variants? ? variants.any?(&:allow_backorders?) : master.allow_backorders?
   end
