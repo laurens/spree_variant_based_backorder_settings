@@ -16,21 +16,21 @@ Installation
 
 Add to your Gemfile:
 
-`gem 'spree_variant_based_backorder_settings', :git => 'git://github.com/laurens/spree_variant_based_backorder_settings.git', :branch => '1-2-stable'`
+    gem 'spree_variant_based_backorder_settings', :git => 'git://github.com/laurens/spree_variant_based_backorder_settings.git', :branch => '1-2-stable'
 
 Install the required migration with
 
-`rails g spree_variant_based_backorder_settings:install`
+    rails g spree_variant_based_backorder_settings:install
 
 Note: this extension overwrites the entire [`_cart_form`](app/views/spree/products/_cart_form.html.erb) partial. 
 
 If you or any other extension in your app have made any changes there, you will have to manually replace any occurence of
 
-`Spree::Config[:allow_backorders]`
+    Spree::Config[:allow_backorders]
 
 with
 
-`(Spree::Config[:allow_backorders] || v.allow_backorders?)`
+    (Spree::Config[:allow_backorders] || v.allow_backorders?)
 
 in order to check for the variant-based backorder settings.
 
@@ -48,4 +48,4 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
     $ bundle exec rake test_app
     $ bundle exec rspec spec
 
-Copyright (c) 2013 [name of extension creator], released under the New BSD License
+Copyright (c) 2013 Laurens Nienhaus, released under the New BSD License
